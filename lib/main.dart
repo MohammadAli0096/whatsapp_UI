@@ -120,15 +120,12 @@ class Whatsapp extends StatelessWidget {
         bottomNavigationBar: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Container(height: 40, child: Icon(Icons.call, color: Colors.grey)),
+            Container(height: 70, child: Icon(Icons.home, color: Colors.grey)),
             Container(
-              height: 40,
-              child: Icon(Icons.home_filled, color: Colors.grey),
+              height: 70,
+              child: Icon(Icons.wifi_tethering_outlined, color: Colors.grey),
             ),
-            Container(
-              height: 40,
-              child: Icon(Icons.satellite, color: Colors.grey),
-            ),
+            Container(height: 70, child: Icon(Icons.call, color: Colors.grey)),
           ],
         ),
       ),
