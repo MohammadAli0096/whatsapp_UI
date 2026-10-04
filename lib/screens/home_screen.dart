@@ -30,9 +30,9 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.white,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -40,13 +40,15 @@ class HomeScreen extends StatelessWidget {
               "WhatsApp",
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                color: Colors.white,
+                fontSize: 25,
+                color: Colors.green,
               ),
             ),
             Row(
               children: [
-                Icon(Icons.camera_alt_outlined, color: Colors.white),
-                Icon(Icons.more_vert, color: Colors.white),
+                Icon(Icons.camera_alt_outlined, color: Colors.black),
+                SizedBox(width: 15),
+                Icon(Icons.more_vert, color: Colors.black),
               ],
             ),
           ],
@@ -57,11 +59,11 @@ class HomeScreen extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Container(
-              height: 40,
+              height: 50,
               width: double.infinity,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                color: const Color.fromARGB(221, 48, 49, 74),
+                borderRadius: BorderRadius.circular(25),
+                color: const Color.fromARGB(179, 229, 226, 226),
               ),
               child: Padding(
                 padding: const EdgeInsets.all(10),
@@ -69,10 +71,86 @@ class HomeScreen extends StatelessWidget {
                   children: [
                     Icon(Icons.search, color: Colors.grey),
                     SizedBox(width: 10),
-                    Text("Search", style: TextStyle(color: Colors.white)),
+                    Text("Search", style: TextStyle(color: Colors.grey)),
                   ],
                 ),
               ),
+            ),
+          ),
+          SingleChildScrollView(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Container(
+                  height: 30,
+                  width: 30,
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.grey, width: 1),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Center(
+                    child: Text(
+                      "All",
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: const Color.fromARGB(255, 81, 81, 81),
+                      ),
+                    ),
+                  ),
+                ),
+                Container(
+                  height: 30,
+                  width: 70,
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.grey, width: 1),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Center(
+                    child: Text(
+                      "Unread 0",
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: const Color.fromARGB(255, 81, 81, 81),
+                      ),
+                    ),
+                  ),
+                ),
+                Container(
+                  height: 30,
+                  width: 70,
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.grey, width: 1),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Center(
+                    child: Text(
+                      "Favorites",
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: const Color.fromARGB(255, 81, 81, 81),
+                      ),
+                    ),
+                  ),
+                ),
+                Container(
+                  height: 30,
+                  width: 70,
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.grey, width: 1),
+
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Center(
+                    child: Text(
+                      "Groups 3",
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: const Color.fromARGB(255, 81, 81, 81),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
           Expanded(
@@ -94,7 +172,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                   title: Text(
                     chat["name"]!,
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(color: Colors.black),
                   ),
                   subtitle: Text(
                     chat["msg"]!,
@@ -102,7 +180,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                   trailing: Text(
                     chat["time"]!,
-                    style: const TextStyle(color: Colors.white),
+                    style: const TextStyle(color: Colors.grey),
                   ),
                 );
               },
@@ -113,13 +191,45 @@ class HomeScreen extends StatelessWidget {
       bottomNavigationBar: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Container(height: 70, child: Icon(Icons.chat, color: Colors.grey)),
           Container(
-            height: 70,
-            child: Icon(Icons.wifi_tethering_outlined, color: Colors.grey),
+            height: 80,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(Icons.chat, color: Colors.grey),
+                Text(
+                  'Chat',
+                  style: TextStyle(color: Colors.grey, fontSize: 12),
+                ),
+              ],
+            ),
           ),
-          Container(height: 70, child: Icon(Icons.call, color: Colors.grey)),
-          
+          Container(
+            height: 80,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(Icons.motion_photos_on, color: Colors.grey),
+                Text(
+                  'Update',
+                  style: TextStyle(color: Colors.grey, fontSize: 12),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            height: 80,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(Icons.call, color: Colors.grey),
+                Text(
+                  'Calls',
+                  style: TextStyle(color: Colors.grey, fontSize: 12),
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );
